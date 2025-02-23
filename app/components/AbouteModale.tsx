@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import MouseBlurEffect from "./MouseBlurEffect";
+
 
 interface ModalProps {
     isOpen: boolean;
@@ -10,6 +12,9 @@ interface ModalProps {
   
   const AbouteModale: React.FC<ModalProps> = ({ isOpen, onClose, triggerButtonRef }) => {
     const modalRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
+        const centerColor = "#6648aa"; // Color at the center
+        const edgeColor = "#805ad5";
   
     useEffect(() => {
       if (isOpen && modalRef.current && triggerButtonRef.current) {
@@ -48,10 +53,18 @@ interface ModalProps {
       onClick={onClose} // Close modal on outside click
     >
       <div
-        className=" bg-purple-600 shadow-lg h-full w-full relative overflow-hidden "
+        className=" bg-[#805ad5] shadow-lg h-full w-full relative overflow-hidden "
         onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside
         style={{ direction: "ltr" }} // Force left-to-right layout to ensure scrollbar appears on the right
+        ref={sectionRef}
       >
+
+        <MouseBlurEffect 
+          containerRef={sectionRef} 
+          centerColor={centerColor} 
+          edgeColor={edgeColor} 
+        />
+
         {/* Scrollable content area */}
         <div className="flex flex-col gap-8 relative w-full h-full overflow-y-auto justify-center text-white">
           <div className=" flex items-center justify-center border-item">
@@ -60,7 +73,7 @@ interface ModalProps {
               alt="Image 1" 
               width={400} 
               height={400} 
-              className="img-top object-cover mb-4 px-4 lg:px-8"
+              className="img-top object-cover mb-4 px-4 lg:px-8" 
             />
           </div>
           <div>

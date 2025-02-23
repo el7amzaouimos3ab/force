@@ -20,17 +20,19 @@ const MouseBlurEffect: React.FC<MouseBlurEffectProps> = ({
   // Function to smoothly update the position of the blur ball
   const moveBall = useCallback(() => {
     if (ballRef.current) {
-      const targetX = position.x - size / 10; // Center the ball at the cursor
-      const targetY = position.y - size / 10;
+      const targetX = position.x - size / 20; // Center the ball at the cursor
+      const targetY = position.y - size / 20;
 
       // Smooth movement using requestAnimationFrame
       const smoothMove = () => {
+        if (!ballRef.current) return; // Add a check here to ensure ballRef is still valid
+
         const currentX = parseFloat(ballRef.current!.style.left || "0");
         const currentY = parseFloat(ballRef.current!.style.top || "0");
 
         // Ease in and out the movement
-        const newX = currentX + (targetX - currentX) * 0.1;
-        const newY = currentY + (targetY - currentY) * 0.1;
+        const newX = currentX + (targetX - currentX) * 0.5;
+        const newY = currentY + (targetY - currentY) * 0.5;
 
         // Update position
         ballRef.current!.style.left = `${newX}px`;
