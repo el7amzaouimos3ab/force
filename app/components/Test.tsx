@@ -30,7 +30,7 @@ export default function Test() {
     <ReactLenis root>
       <main>
           <section className='zoom-section bg-[#3dc1f0] text-white grid place-content-center h-screen sticky top-0 overflow-hidden'>
-            <div className='pattern-bg absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#1692be_1px,transparent_1px),linear-gradient(to_bottom,#1692be_1px,transparent_1px)] bg-[size:140px_140px]'></div>
+            <div className='pattern-bg absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#1692be_1px,transparent_1px),linear-gradient(to_bottom,#1692be_1px,transparent_1px)] bg-[size:80px_80px]'></div>
             <h1 className='bottom-to-top-text1 2xl:text-7xl text-4xl/[1.2] md:text-6xl/[1.2] px-20 font-semibold text-center tracking-tight leading-[120%] z-10'>
               رحلتك للنجاح تبدأ من هنا
             </h1>
