@@ -76,8 +76,6 @@ const Three = () => {
 
           const animate = () => {
             requestAnimationFrame(animate);
-
-            const time = Date.now() * 0.001;
             
 
             // Render the scene
