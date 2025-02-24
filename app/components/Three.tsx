@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { AmbientLight, MeshPhysicalMaterial, PerspectiveCamera, PointLight, Scene, WebGLRenderer, CubeTextureLoader } from 'three';
+import { AmbientLight, MeshPhysicalMaterial, PerspectiveCamera, PointLight, Scene, WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const Three = () => {

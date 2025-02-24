@@ -2,7 +2,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import  Three from './Three';
 import AbouteModale from "./AbouteModale";
 import MouseBlurEffect from "./MouseBlurEffect";
 import Image from 'next/image';
