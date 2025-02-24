@@ -42,18 +42,24 @@ const ImageSwiper: React.FC = () => {
     <Swiper
 
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={10}
+      spaceBetween={20}
       slidesPerView={1}
       breakpoints={{
 
         640: {
-          slidesPerView: 1,  
+          slidesPerView: 1.4,  
+          spaceBetween: 20,  // Add space between slides
+
         },
         768: {
           slidesPerView: 3, 
+          spaceBetween: 20,  // Add space between slides
+
         },
         1024: {
           slidesPerView: 4,
+          spaceBetween: 20,  // Add space between slides
+
         },
       }}
       loop={true}
