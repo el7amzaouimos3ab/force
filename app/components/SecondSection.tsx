@@ -69,7 +69,7 @@ const SecondSection: React.FC = () => {
   }, []);
  
   return (
-    <section id='about' className="bg-[#070A0B] relative md:flex md:items-center md:justify-between px-4 lg:px-8 overflow-hidden" ref={sectionRef}>
+    <section id='about' className="bg-[#070A0B] lg:w-full lg:h-full relative md:flex md:items-center md:justify-between py-4 lg:py-8 px-4 lg:px-8 overflow-hidden" ref={sectionRef}>
 
 <MouseBlurEffect 
         containerRef={sectionRef} 
@@ -89,7 +89,7 @@ const SecondSection: React.FC = () => {
         </p>
         <button
           ref={triggerButtonRef}  
-          className=" bottom-to-top-text1 bg-white hover:bg-[#564897] hover:text-white py-2 text-black w-48"
+          className=" bottom-to-top-text1 bg-white hover:bg-[#564897] hover:text-white py-2 text-black w-48 mb-4"
           onClick={openModal}
         >
           اعرف المزيد
