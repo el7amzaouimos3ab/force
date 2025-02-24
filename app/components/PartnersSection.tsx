@@ -1,9 +1,7 @@
 // app/components/ImageSection.tsx
 'use client';
 import React from 'react';
-import { useRef } from 'react';
 import Image from "next/image";
-import MouseBlurEffect from "./MouseBlurEffect";
 
 
 
