@@ -69,7 +69,7 @@ const SecondSection: React.FC = () => {
   }, []);
  
   return (
-    <section id='about' className="bg-[#070A0B] lg:w-full lg:h-full relative md:flex md:items-center md:justify-between py-4 lg:py-8 px-4 lg:px-8 overflow-hidden " ref={sectionRef}>
+    <section id='about' className="bg-[#070A0B] flex flex-col-reverse md:flex-row lg:w-full lg:h-full relative md:flex md:items-center md:justify-between py-4 lg:py-8 px-4 lg:px-8 overflow-hidden " ref={sectionRef}>
 
 <MouseBlurEffect 
         containerRef={sectionRef} 
@@ -105,7 +105,7 @@ const SecondSection: React.FC = () => {
           alt="work 1" 
           width={400} 
           height={400}
-          className=" imagesecond transition-all ease-out duration-300 "
+          className=" imagesecond transition-all ease-out duration-300 w-64 md:w-[100%] py-8 "
           style={{ filter: 'brightness(10%)' }} // Initially darkened image
 
         />
