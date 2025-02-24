@@ -1,13 +1,12 @@
 'use client';
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import React from 'react';
 import Image from "next/image";
 import MouseBlurEffect from "./MouseBlurEffect";
+import { animateTextScroll } from '../utils/gsapAnimations';
 
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 const ServicesSection: React.FC = () => {
 
@@ -17,30 +16,7 @@ const ServicesSection: React.FC = () => {
 
   useEffect(() => {
 
-const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
-
-
-    texts.forEach((texts) => {
-    
-    gsap.fromTo(
-      texts, 
-      {
-        y: 35, 
-        opacity: 0,
-      },
-      {
-        y: 0, 
-        opacity: 1, 
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: texts,
-          start: 'top bottom', 
-          end: 'bottom bottom', 
-          scrub: 1,
-        },
-      }
-    );
-  });
+animateTextScroll();
 
 }, []);
 
@@ -62,7 +38,7 @@ const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
         <div className="relative flex flex-col items-right text-right md:p-5 border-item ">
           
           <Image 
-            src="/services/2.png" 
+            src="/services/1.gif" 
             alt="Image 2" 
             width={100} 
             height={100} 
@@ -80,7 +56,7 @@ const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
 
         <div className="relative flex flex-col items-right text-right md:p-5 border-item">
           <Image 
-            src="/services/1.png" 
+            src="/services/2.gif" 
             alt="Image 1" 
             width={100} 
             height={100} 
@@ -98,7 +74,7 @@ const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
 
         <div className="relative flex flex-col items-right text-right md:p-5 border-item">
           <Image 
-            src="/services/3.png" 
+            src="/services/3.gif" 
             alt="Image 1" 
             width={100} 
             height={100} 

@@ -49,7 +49,7 @@ const Nav: React.FC = () => {
               <div/>
           </div>
 
-          <div className="flex items-center gap-4 justify-center">
+          <div className="flex items-center gap-4 ml-4 justify-center">
 
           <button className="relative  bg-white px-6 py-2 md:mt-1 text-black hover:bg-gray-400 text-center align-middle " >
             

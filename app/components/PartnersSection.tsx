@@ -2,10 +2,20 @@
 'use client';
 import React from 'react';
 import Image from "next/image";
+import { animateTextScroll } from '../utils/gsapAnimations';
+import { useEffect } from 'react';
+
+
 
 
 
 const PartnersSection: React.FC = () => {
+
+  useEffect(() => {
+
+    animateTextScroll();
+
+  }, []);
 
 
 
@@ -15,13 +25,13 @@ const PartnersSection: React.FC = () => {
     <section id='partners' className="relative bg-[#f7fafc] pb-10  px-4 lg:px-8 overflow-hidden" >
 
       <div>
-        <h1 className='bottom-to-top-text1 text-black text-4xl md:text-5xl font-medium py-10'>شركاؤنا</h1>
+        <h1 className='bottom-to-top-text text-black text-4xl md:text-5xl font-medium py-10'>شركاؤنا</h1>
       </div>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-1 md:gap-2 rtl">
 
         {images.map((image, index) => (
-          <div key={index} className="bottom-to-top-text1 relative overflow-hidden">
+          <div key={index} className="bottom-to-top-text relative overflow-hidden">
             <Image 
               src={image} 
               alt={`Image ${index + 1}`}

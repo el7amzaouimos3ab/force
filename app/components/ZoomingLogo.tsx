@@ -1,44 +1,17 @@
 'use client';
 import Image from "next/image";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+import { animateLogoOnScroll, animateTextZoomOnScroll } from '../utils/gsapAnimations';
+
+
 
 export default function ZoomingLogo() {
   useEffect(() => {
 
-    if (typeof window !== "undefined") {
+    animateLogoOnScroll();   
+    animateTextZoomOnScroll();
 
-      
-      gsap.to("#logo", {
-        scrollTrigger: {
-          trigger: "#logo",
-          start: "78% bottom", 
-          end: `center top`, 
-          scrub: true, 
-        },
-        scale: 20, 
-      });
-
-      gsap.to(".text-zoom", {
-        scrollTrigger: {
-          trigger: ".text-zoom",
-          start: `top 70%`, 
-          end: `50% 60%`, 
-          scrub: true, 
-        },
-        opacity: 1,
-        filter: "blur(0px)", 
-        duration: 0.1, 
-      });
-
-
-      ScrollTrigger.refresh();
-
-    }
-    
   }, []);
 
   return (

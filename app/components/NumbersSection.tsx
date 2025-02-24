@@ -1,10 +1,10 @@
 'use client';
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import MouseBlurEffect from "./MouseBlurEffect";
 
-gsap.registerPlugin(ScrollTrigger);
+import MouseBlurEffect from "./MouseBlurEffect";
+import { animateTextScroll, numbersAnimate } from '../utils/gsapAnimations';
+
+
 
 const NumbersSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null); 
@@ -12,54 +12,11 @@ const NumbersSection: React.FC = () => {
   const edgeColor = "#C13C27";
 
   useEffect(() => {
-    const texts = gsap.utils.toArray('.bottom-to-top') as HTMLElement[];
 
-    texts.forEach((texts) => {
-      gsap.fromTo(
-        texts, 
-        {
-          y: 35, 
-          opacity: 0, 
-        },
-        {
-          y: 0, 
-          opacity: 1, 
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: texts,
-            start: 'top bottom',
-            end: 'bottom bottom',
-            scrub: 1,
-          },
-        }
-      );
-    });
+    animateTextScroll();
+    numbersAnimate();
 
-    const numbers = document.querySelectorAll(".number");
-
-    numbers.forEach((num) => {
-      const targetValue = num.getAttribute("data-target");
-
-      gsap.to(num, {
-        scrollTrigger: {
-          trigger: num,
-          start: "bottom 80%",
-          end: "top 30%",
-          scrub: 1,
-          onEnter: () => {
-            gsap.to(num, {
-              innerHTML: targetValue,
-              duration: 1,
-              ease: "power1.out",
-              snap: { innerHTML: 1 },
-              onUpdate: () => {
-                num.innerHTML = Math.ceil(Number(num.innerHTML)).toString();
-              },
-            });
-          },
-        },
-      });
-    });
+  
   }, []);
 
   return (
@@ -74,61 +31,61 @@ const NumbersSection: React.FC = () => {
         edgeColor={edgeColor} 
       />
 
-      <div className="bottom-to-top">
+      <div className="bottom-to-top-text">
         <h1 className='text-white text-4xl md:text-5xl font-medium py-10'>فورس بالأرقام</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3">
 
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item-1">
-          <div className="bottom-to-top flex number-container text-center">
+          <div className="bottom-to-top-text flex number-container text-center">
             <div className="number text-6xl text-white" data-target="40">0</div>
           </div>
-          <h2 className="bottom-to-top text-xl text-white">عدد الموظفين</h2>
+          <h2 className="bottom-to-top-text text-xl text-white">عدد الموظفين</h2>
         </div>
 
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item-1">
-          <div className="bottom-to-top flex number-container text-center">
+          <div className="bottom-to-top-text flex number-container text-center">
             <div className="number text-6xl text-white" data-target="15">0</div>
           </div>
-          <h2 className="bottom-to-top text-xl text-white">عدد العملاء</h2>
+          <h2 className="bottom-to-top-text text-xl text-white">عدد العملاء</h2>
         </div>
 
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item-1">
-          <div className="bottom-to-top flex number-container text-center">
+          <div className="bottom-to-top-text flex number-container text-center">
             <h1 className="leter text-6xl text-white">M</h1>
             <div className="number text-6xl text-white" data-target="2">0</div>
             <h1 className="leter text-6xl text-white">,</h1>
             <div className="number text-6xl text-white" data-target="1">0</div>
           </div>
-          <h2 className="bottom-to-top text-xl text-white">عميل محتمل</h2>
+          <h2 className="bottom-to-top-text text-xl text-white">عميل محتمل</h2>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3">
 
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item">
-          <div className="bottom-to-top flex number-container text-center">
+          <div className="bottom-to-top-text flex number-container text-center">
             <div className="number text-6xl text-white" data-target="500">0</div>
             <h1 className="leter2 text-6xl text-white">+</h1>
           </div>
-          <h2 className="bottom-to-top text-xl text-white">المشاريع المنجزة</h2>
+          <h2 className="bottom-to-top-text text-xl text-white">المشاريع المنجزة</h2>
         </div>
 
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item">
-          <div className="bottom-to-top flex number-container text-center">
+          <div className="bottom-to-top-text flex number-container text-center">
             <h1 className="leter2 text-6xl text-white">K</h1>
             <div className="number text-6xl text-white" data-target="300">0</div>
           </div>
-          <h2 className="bottom-to-top text-xl text-white">عملية تحويل ناجحة</h2>
+          <h2 className="bottom-to-top-text text-xl text-white">عملية تحويل ناجحة</h2>
         </div>
 
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item">
-          <div className="bottom-to-top flex number-container text-center">
+          <div className="bottom-to-top-text flex number-container text-center">
             <h1 className="leter2 text-6xl text-white">M</h1>
             <div className="number text-6xl text-white" data-target="42">0</div>
           </div>
-          <h2 className="bottom-to-top text-xl text-white">الإنفاق الإعلاني</h2>
+          <h2 className="bottom-to-top-text text-xl text-white">الإنفاق الإعلاني</h2>
         </div>
       </div>
     </section>

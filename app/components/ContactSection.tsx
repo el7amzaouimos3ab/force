@@ -1,9 +1,17 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import MouseBlurEffect from "./MouseBlurEffect";
+import { animateTextScroll } from '../utils/gsapAnimations';
+
 
 
 const ContactSection = () => {
+
+  useEffect(() => {
+  
+      animateTextScroll();
+  
+    }, []);
 
   const sectionRef = useRef<HTMLDivElement | null>(null); // section
       const centerColor = "#192429"; // center color
@@ -56,7 +64,7 @@ const ContactSection = () => {
       />
 
     <div id='contact' className=' bg-[#070A0B]'>
-        <h1 className='bottom-to-top-text1 text-white text-4xl md:text-5xl font-medium py-10'>تواصل معنا</h1>
+        <h1 className='bottom-to-top-text text-white text-4xl md:text-5xl font-medium py-10'>تواصل معنا</h1>
     </div>
        <div className='flex items-center justify-center'>
       <form onSubmit={handleSubmit} className=" space-y-4 w-[95%] md:w-[50%] justify-center text-left ">
@@ -68,7 +76,7 @@ const ContactSection = () => {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className="bottom-to-top-text1 border bg-transparent border-white text-white p-2 w-full"
+            className="bottom-to-top-text border bg-transparent border-white text-white p-2 w-full"
             required
             placeholder='الاسم'
           />
@@ -81,7 +89,7 @@ const ContactSection = () => {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className="bottom-to-top-text1 border bg-transparent border-white text-white p-2 w-full"
+            className="bottom-to-top-text border bg-transparent border-white text-white p-2 w-full"
             required
             placeholder='الايمايل'
           />
@@ -94,7 +102,7 @@ const ContactSection = () => {
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            className="bottom-to-top-text1 border bg-transparent border-white text-white p-2 w-full text-right"
+            className="bottom-to-top-text border bg-transparent border-white text-white p-2 w-full text-right"
             required
             placeholder='رقم الجوال'
           />
@@ -106,7 +114,7 @@ const ContactSection = () => {
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            className="bottom-to-top-text1 border bg-transparent border-white text-white p-2 w-full"
+            className="bottom-to-top-text border bg-transparent border-white text-white p-2 w-full"
             rows={4}
             required
             placeholder='أخبرنا عن مشروعك'
@@ -114,7 +122,7 @@ const ContactSection = () => {
         </div>
 
         <div>
-          <button className="bottom-to-top-text1 bg-white px-6 py-2 text-black hover:bg-gray-400 " >
+          <button className="bottom-to-top-text bg-white px-6 py-2 text-black hover:bg-gray-400 " >
           اضغط وابدأ الرحلة   
           </button>
         </div>

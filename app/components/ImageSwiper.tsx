@@ -5,6 +5,9 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Image from "next/image";
 import { useRef } from "react";
 import MouseBlurEffect from "./MouseBlurEffect";
+import { animateTextScroll } from '../utils/gsapAnimations';
+import { useEffect } from 'react';
+
 
 
 
@@ -18,6 +21,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const ImageSwiper: React.FC = () => {
+
+  useEffect(() => {
+  
+      animateTextScroll();
+  
+    }, []);
 
 
   const sectionRef = useRef<HTMLDivElement | null>(null); // section
@@ -37,7 +46,7 @@ const ImageSwiper: React.FC = () => {
 
 
     <div>
-        <h1 id='works' className='bottom-to-top-text1 text-white text-4xl md:text-5xl font-medium py-14  px-4 lg:px-8'>أعمالنا</h1>
+        <h1 id='works' className='bottom-to-top-text text-white text-4xl md:text-5xl font-medium py-14  px-4 lg:px-8'>أعمالنا</h1>
       </div>
     <Swiper
 
