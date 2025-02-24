@@ -1,4 +1,3 @@
-// app/components/SectionTwo.tsx
 'use client';
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -8,13 +7,12 @@ import Image from "next/image";
 import MouseBlurEffect from "./MouseBlurEffect";
 
 
-// Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection: React.FC = () => {
 
-  const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
-      const centerColor = "#192429"; // Color at the center
+  const sectionRef = useRef<HTMLDivElement | null>(null); 
+      const centerColor = "#192429"; 
       const edgeColor = "#070A0B";
 
   useEffect(() => {
@@ -22,24 +20,23 @@ const ServicesSection: React.FC = () => {
 const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
 
 
-    // GSAP animation with ScrollTrigger
     texts.forEach((texts) => {
     
     gsap.fromTo(
-      texts, // target class for the text
+      texts, 
       {
-        y: 35, // initial position (100px below its final position)
-        opacity: 0, // initial opacity (invisible)
+        y: 35, 
+        opacity: 0,
       },
       {
-        y: 0, // final position (original position)
-        opacity: 1, // final opacity (fully visible)
+        y: 0, 
+        opacity: 1, 
         ease: 'power3.out',
         scrollTrigger: {
           trigger: texts,
-          start: 'top bottom', // animation starts when the top of the element is 80% from the top of the viewport
-          end: 'bottom bottom', // animation ends when the top of the element reaches 30% of the viewport
-          scrub: 1, // smooth scrubbing (animation tied to scroll position)
+          start: 'top bottom', 
+          end: 'bottom bottom', 
+          scrub: 1,
         },
       }
     );
@@ -61,11 +58,11 @@ const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
         <h1 className='bottom-to-top-text text-white text-4xl md:text-5xl font-medium py-10'>خدماتنا</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 space-y-6 md:space-y-0">
-        {/* Grid Item 1 */}
+
         <div className="relative flex flex-col items-right text-right md:p-5 border-item ">
           
           <Image 
-            src="/services/2.png" // You can also use import to get a local image.
+            src="/services/2.png" 
             alt="Image 2" 
             width={100} 
             height={100} 
@@ -81,10 +78,9 @@ const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
           </div>
         </div>
 
-        {/* Grid Item 2 */}
         <div className="relative flex flex-col items-right text-right md:p-5 border-item">
           <Image 
-            src="/services/1.png" // You can also use import to get a local image.
+            src="/services/1.png" 
             alt="Image 1" 
             width={100} 
             height={100} 
@@ -100,10 +96,9 @@ const texts = gsap.utils.toArray('.bottom-to-top-text') as HTMLElement[];
           </div>
         </div>
 
-        {/* Grid Item 3 */}
         <div className="relative flex flex-col items-right text-right md:p-5 border-item">
           <Image 
-            src="/services/3.png" // You can also use import to get a local image.
+            src="/services/3.png" 
             alt="Image 1" 
             width={100} 
             height={100} 

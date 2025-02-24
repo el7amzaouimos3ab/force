@@ -9,18 +9,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export default function Test() {
 
   useEffect(() => {
-    // Register ScrollTrigger with GSAP
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animation for the background zoom effect on scroll
     gsap.to(".pattern-bg", {
-      scale: 1.5, // More reasonable zoom level (adjust as necessary)
+      scale: 1.5, 
       scrollTrigger: {
-        trigger: ".zoom-section", // The section you want to trigger the animation on
-        start: "top bottom", // Start when the section hits the top of the viewport
-        end: "bottom bottom", // End when the section hits the bottom of the viewport
-        scrub: true, // Make the animation smooth as you scroll
-        markers: false, // Set to true for debugging the scroll trigger markers
+        trigger: ".zoom-section",
+        start: "top bottom", 
+        end: "bottom bottom", 
+        scrub: true, 
+        markers: false,
       },
     });
 

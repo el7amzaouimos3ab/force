@@ -12,8 +12,8 @@ interface ModalProps {
   
   const AbouteModale: React.FC<ModalProps> = ({ isOpen, onClose, triggerButtonRef }) => {
     const modalRef = useRef<HTMLDivElement>(null);
-    const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
-        const centerColor = "#6648aa"; // Color at the center
+    const sectionRef = useRef<HTMLDivElement | null>(null); // section
+        const centerColor = "#6648aa"; // center color
         const edgeColor = "#805ad5";
   
     useEffect(() => {
@@ -21,7 +21,7 @@ interface ModalProps {
         const buttonRect = triggerButtonRef.current.getBoundingClientRect();
         const modalRect = modalRef.current.getBoundingClientRect();
   
-        // Set initial position for the modal to zoom in from the button
+        // Set position for modal from the button
         gsap.set(modalRef.current, {
           x: buttonRect.left + buttonRect.width / 2 - modalRect.width / 2,
           y: buttonRect.top + buttonRect.height / 2 - modalRect.height / 2,
@@ -29,16 +29,16 @@ interface ModalProps {
           scale: 0,
         });
   
-        // Animate the modal into its final position and scale
+        // Animate modal 
         gsap.to(modalRef.current, {
           duration: 0.9,
           backgroundColor: "#000",
-          x: 0, // Center horizontally
-          y: 0, // Center vertically
+          x: 0, 
+          y: 0, 
           scale: 1,
-          width: "auto", // Allow it to expand
-          height: "auto", // Allow it to expand
-          ease: "expo.in", // Smooth animation easing
+          width: "auto", 
+          height: "auto", 
+          ease: "expo.in", 
           
         });
       }
@@ -50,12 +50,12 @@ interface ModalProps {
     <div
       className=" aboutSection fixed inset-0 bg-gray-400 bg-opacity-90 flex justify-center items-center z-[999999] "
       ref={modalRef}
-      onClick={onClose} // Close modal on outside click
+      onClick={onClose} 
     >
       <div
         className=" bg-[#805ad5] shadow-lg h-full w-full relative overflow-hidden "
-        onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside
-        style={{ direction: "ltr" }} // Force left-to-right layout to ensure scrollbar appears on the right
+        onClick={(e) => e.stopPropagation()}
+        style={{ direction: "ltr" }} 
         ref={sectionRef}
       >
 
@@ -65,11 +65,10 @@ interface ModalProps {
           edgeColor={edgeColor} 
         />
 
-        {/* Scrollable content area */}
         <div className="flex flex-col gap-8 relative w-full h-full overflow-y-auto justify-center text-white">
           <div className=" flex items-center justify-center border-item">
             <Image 
-              src="/logos/footer.webp" // You can also use import to get a local image.
+              src="/logos/footer.webp" 
               alt="Image 1" 
               width={400} 
               height={400} 
@@ -82,11 +81,11 @@ interface ModalProps {
             </p>
           </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3 space-y-6 md:space-y-0 px-4 lg:px-8">
-                    {/* Grid Item 1 */}
+                    {/* 1 */}
                     <div className="relative flex flex-col items-center text-center md:p-7 border-item border">
                       
                       <Image 
-                        src="/abouts/STRATEGY.gif" // You can also use import to get a local image.
+                        src="/abouts/STRATEGY.gif" 
                         alt="Image 2" 
                         width={100} 
                         height={100} 
@@ -96,10 +95,10 @@ interface ModalProps {
                       
                     </div>
             
-                    {/* Grid Item 2 */}
+                    {/*  2 */}
                     <div className="relative flex flex-col items-center text-center md:p-7 border-item border">
                       <Image 
-                        src="/abouts/MESSAGE.gif" // You can also use import to get a local image.
+                        src="/abouts/MESSAGE.gif" 
                         alt="Image 1" 
                         width={100} 
                         height={100} 
@@ -109,10 +108,10 @@ interface ModalProps {
                       
                     </div>
             
-                    {/* Grid Item 3 */}
+                    {/* 3 */}
                     <div className="relative flex flex-col items-center text-center md:p-7 border-item border">
                       <Image 
-                        src="/abouts/VISION.gif" // You can also use import to get a local image.
+                        src="/abouts/VISION.gif" 
                         alt="Image 1" 
                         width={100} 
                         height={100} 
@@ -124,7 +123,6 @@ interface ModalProps {
                   </div>
         </div>
 
-        {/* Close button positioned at the top-right corner */}
        
         <button onClick={onClose} className="text-3xl text-white cursor-pointer absolute top-4 left-4 px-4 py-2"> X </button>
 

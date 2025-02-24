@@ -10,31 +10,28 @@ export default function ZoomingLogo() {
   useEffect(() => {
 
     if (typeof window !== "undefined") {
-      // Refresh ScrollTrigger after content is loaded    
 
       
-      // ScrollTrigger for .logo
       gsap.to("#logo", {
         scrollTrigger: {
           trigger: "#logo",
-          start: "78% bottom", // Start when the top of .logo hits the top of the viewport
-          end: `center top`, // End when the scroll position has moved by one viewport height
-          scrub: true, // Sync animation with scroll position
+          start: "78% bottom", 
+          end: `center top`, 
+          scrub: true, 
         },
-        scale: 20, // Scale animation effect
+        scale: 20, 
       });
 
-      // ScrollTrigger for .text-zoom
       gsap.to(".text-zoom", {
         scrollTrigger: {
           trigger: ".text-zoom",
           start: `top 70%`, 
-          end: `50% 60%`, // End when the top of .text-zoom reaches 50% of the viewport height
-          scrub: true, // Sync animation with scroll position
+          end: `50% 60%`, 
+          scrub: true, 
         },
-        opacity: 1, // Fade in effect
-        filter: "blur(0px)", // Remove blur
-        duration: 0.1, // Smooth transition
+        opacity: 1,
+        filter: "blur(0px)", 
+        duration: 0.1, 
       });
 
 
@@ -61,7 +58,7 @@ export default function ZoomingLogo() {
           
           <Image
             id="logo"
-            src="/logos/zoom2.svg" // You can also use import to get a local image.
+            src="/logos/zoom2.svg" 
             alt="Image 1"
             layout="fill"
             style={{ objectFit: 'cover' }}

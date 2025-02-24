@@ -4,28 +4,26 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import MouseBlurEffect from "./MouseBlurEffect";
 
-// Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 const NumbersSection: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
-  const centerColor = "#f45d4a"; // Color at the center
+  const sectionRef = useRef<HTMLDivElement | null>(null); 
+  const centerColor = "#f45d4a";
   const edgeColor = "#C13C27";
 
   useEffect(() => {
     const texts = gsap.utils.toArray('.bottom-to-top') as HTMLElement[];
 
-    // GSAP animation with ScrollTrigger
     texts.forEach((texts) => {
       gsap.fromTo(
-        texts, // target class for the text
+        texts, 
         {
-          y: 35, // initial position (100px below its final position)
-          opacity: 0, // initial opacity (invisible)
+          y: 35, 
+          opacity: 0, 
         },
         {
-          y: 0, // final position (original position)
-          opacity: 1, // final opacity (fully visible)
+          y: 0, 
+          opacity: 1, 
           ease: 'power3.out',
           scrollTrigger: {
             trigger: texts,
@@ -37,7 +35,6 @@ const NumbersSection: React.FC = () => {
       );
     });
 
-    // GSAP animations for numbers
     const numbers = document.querySelectorAll(".number");
 
     numbers.forEach((num) => {
@@ -71,7 +68,6 @@ const NumbersSection: React.FC = () => {
       ref={sectionRef}
       className="relative numbers-section bg-[#C13C27] px-4 lg:px-8 overflow-hidden"
     >
-      {/* Apply the mouse blur effect to the section */}
       <MouseBlurEffect 
         containerRef={sectionRef} 
         centerColor={centerColor} 
@@ -83,7 +79,7 @@ const NumbersSection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3">
-        {/* Grid Item 1 */}
+
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item-1">
           <div className="bottom-to-top flex number-container text-center">
             <div className="number text-6xl text-white" data-target="40">0</div>
@@ -91,7 +87,6 @@ const NumbersSection: React.FC = () => {
           <h2 className="bottom-to-top text-xl text-white">عدد الموظفين</h2>
         </div>
 
-        {/* Grid Item 2 */}
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item-1">
           <div className="bottom-to-top flex number-container text-center">
             <div className="number text-6xl text-white" data-target="15">0</div>
@@ -99,7 +94,6 @@ const NumbersSection: React.FC = () => {
           <h2 className="bottom-to-top text-xl text-white">عدد العملاء</h2>
         </div>
 
-        {/* Grid Item 3 */}
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item-1">
           <div className="bottom-to-top flex number-container text-center">
             <h1 className="leter text-6xl text-white">M</h1>
@@ -112,7 +106,7 @@ const NumbersSection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3">
-        {/* Grid Item 1 */}
+
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item">
           <div className="bottom-to-top flex number-container text-center">
             <div className="number text-6xl text-white" data-target="500">0</div>
@@ -121,7 +115,6 @@ const NumbersSection: React.FC = () => {
           <h2 className="bottom-to-top text-xl text-white">المشاريع المنجزة</h2>
         </div>
 
-        {/* Grid Item 2 */}
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item">
           <div className="bottom-to-top flex number-container text-center">
             <h1 className="leter2 text-6xl text-white">K</h1>
@@ -130,7 +123,6 @@ const NumbersSection: React.FC = () => {
           <h2 className="bottom-to-top text-xl text-white">عملية تحويل ناجحة</h2>
         </div>
 
-        {/* Grid Item 3 */}
         <div className="relative flex flex-col items-center justify-center text-center py-20 border-item">
           <div className="bottom-to-top flex number-container text-center">
             <h1 className="leter2 text-6xl text-white">M</h1>

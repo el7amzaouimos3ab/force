@@ -1,9 +1,7 @@
 
-// Importing React and Next.js related modules
 import React from "react";
 import ReactLenis from "lenis/react";
 
-// Importing components for different sections of the page
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import SecondSection from "./components/SecondSection";
@@ -31,38 +29,38 @@ export default function Home() {
     <>
 
       <ReactLenis root>
-        {/* Navigation Bar */}
+        {/* Navbar */}
         <Nav />
         
-        {/* Hero Section (First section on the page) */}
+        {/* Hero Section  */}
         <Hero />
 
         
-        {/* Second Section (Can be a showcase or any other content) */}
+        {/* About Section */}
         <SecondSection />
         
-        {/* Partners Section (Showcase of partners or collaborators) */}
+        {/* Partners Section */}
         <PartnersSection />
 
         <Test />
         
-        {/* Services Section (Overview of the services you offer) */}
+        {/* Services Section */}
 
         <ScrollingText />
         
-        {/* Image Swiper (Showcase images with a swiper or carousel) */}
+        {/* Work section */}
         <ImageSwiper/>
         
-        {/* Numbers Section (Showcase important statistics, numbers, etc.) */}
+        {/* Numbers Section */}
         <NumbersSection />
         
-        {/* Zooming Logo (A cool animation or effect on your logo) */}
+        {/* Zooming Logo  */}
         <ZoomingLogo />
         
-        {/* Contact Section (Form or contact details) */}
+        {/* Contact Section */}
         <ContactSection />
         
-        {/* Footer (Footer of the page with additional information or links) */}
+        {/* Footer */}
         <Footer />
       </ReactLenis> 
     </>

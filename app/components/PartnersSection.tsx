@@ -9,12 +9,11 @@ import MouseBlurEffect from "./MouseBlurEffect";
 
 const PartnersSection: React.FC = () => {
 
-    const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
-      const centerColor = "#d6e3ea"; // Color at the center
+    const sectionRef = useRef<HTMLDivElement | null>(null); 
+      const centerColor = "#d6e3ea"; 
       const edgeColor = "#f7fafc";
 
 
-  // Array to generate image paths
   const images = Array.from({ length: 18 }, (_, i) => `/images/${i + 1}.png`);
  
   return (
@@ -32,11 +31,11 @@ const PartnersSection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2 md:gap-4 rtl">
-        {/* Loop over the images array and display each image */}
+
         {images.map((image, index) => (
           <div key={index} className="bottom-to-top-text1 relative overflow-hidden border border-black">
             <Image 
-              src={image} // You can also use import to get a local image.
+              src={image} 
               alt={`Image ${index + 1}`}
               width={615} 
               height={432} 

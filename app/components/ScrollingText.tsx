@@ -6,8 +6,8 @@ import MouseBlurEffect from "./MouseBlurEffect";
 
 const ScrollingText: React.FC = () => {
 
-    const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
-    const centerColor = "#192429"; // Color at the center
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+    const centerColor = "#192429"; 
     const edgeColor = "#070A0B";
 
 
@@ -29,12 +29,10 @@ const ScrollingText: React.FC = () => {
 
 
 
-        {/* Wrapping div for the animation */}
         <div className="animate-scroll-left-to-right flex gap-40">
 
             <div className=" flex gap-10">
 
-                {/* First block of text */}
 
                 <p className='max-w-none text-[#564897] font-extrabold text-9xl w-full'>
                     سما
@@ -55,7 +53,6 @@ const ScrollingText: React.FC = () => {
 
             <div className=" flex gap-10">
 
-                {/* First block of text */}
 
                 <p className='max-w-none text-[#564897] font-extrabold text-9xl w-full'>
                     سما
@@ -80,7 +77,6 @@ const ScrollingText: React.FC = () => {
 
         <div className=" flex gap-10">
 
-            {/* First block of text */}
 
             <p className='max-w-none text-[#564897] font-extrabold text-9xl w-full'>
                 سما
@@ -101,7 +97,6 @@ const ScrollingText: React.FC = () => {
 
             <div className=" flex gap-10">
 
-            {/* First block of text */}
 
             <p className='max-w-none text-[#564897] font-extrabold text-9xl w-full'>
                 سما

@@ -20,7 +20,7 @@ export const Footer = () => {
 
         <div className=" flex items-left justify-end border-item">
           <Image 
-            src="/logos/footer.webp" // You can also use import to get a local image.
+            src="/logos/footer.webp" 
             alt="Image 1" 
             width={400} 
             height={400} 

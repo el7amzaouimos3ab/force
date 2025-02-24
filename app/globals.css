@@ -20,86 +20,21 @@ html, body {
 
 
 
-/* Custom CSS for the gradient border effect */
-.aboutSection .border-item {
-  position: relative;
-}
 
-/* Different gradient for the first grid item */
-.aboutSection .border-item:nth-child(1)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px; /* Height of the top border */
-  background: linear-gradient(to right, #9c27b0, #000); /* Gradient for first item */
-  z-index: -1;
-}
-
-/* Different gradient for the second grid item */
-.aboutSection .border-item:nth-child(2)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, #9c27b0, #9c27b0); /* Gradient for second item */
-  z-index: -1;
-}
-
-/* Different gradient for the third grid item */
-.aboutSection .border-item:nth-child(3)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to left, #9c27b0, #000); /* Gradient for third item */
-  z-index: -1;
-}
-
-/* Vertical gradient borders between items */
-.aboutSection .border-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 1px; /* Width of the vertical border */
-  background: linear-gradient(to bottom, #9c27b0, #000); /* Another gradient for the border */
-  z-index: -1;
-}
-
-/* Optional: Add bottom border for the last item */
-.aboutSection .border-item:last-child::after {
-  content: none; /* No vertical border on the last item */
-}
-
-
-
-
-
-
-/* Custom CSS for the gradient border effect */
 .section-two .border-item {
     position: relative;
   }
   
-/* Different gradient for the first grid item */
 .section-two .border-item:nth-child(1)::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px; /* Height of the top border */
-    background: linear-gradient(to right, #fff, #000); /* Gradient for first item */
+    height: 1px; 
+    background: linear-gradient(to right, #fff, #000); 
   }
   
-  /* Different gradient for the second grid item */
   .section-two .border-item:nth-child(2)::before {
     content: '';
     position: absolute;
@@ -107,10 +42,9 @@ html, body {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(to right, #fff, #fff); /* Gradient for second item */
+    background: linear-gradient(to right, #fff, #fff); 
   }
   
-  /* Different gradient for the third grid item */
   .section-two  .border-item:nth-child(3)::before {
     content: '';
     position: absolute;
@@ -118,52 +52,47 @@ html, body {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(to left, #fff, #000); /* Gradient for third item */
+    background: linear-gradient(to left, #fff, #000); 
   }
   
-  /* Vertical gradient borders between items */
   .section-two  .border-item:not(:last-child)::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 1px; /* Width of the vertical border */
-    background: linear-gradient(to bottom, #fff, #000); /* Another gradient for the border */
+    width: 1px; 
+    background: linear-gradient(to bottom, #fff, #000); 
   }
   
-  /* Optional: Add bottom border for the last item */
   .section-two  .border-item:last-child::after {
-    content: none; /* No vertical border on the last item */
+    content: none; 
   }
     
 
 
   .text-zoom {
     opacity:0;
-    filter: blur(10px); /* Start with a blurry effect */
-    transition: opacity 1s ease, filter 1s ease; /* Smooth transition for appearance */
+    filter: blur(10px);
+    transition: opacity 1s ease, filter 1s ease; 
   }
 
 
 
-/* Custom CSS for the gradient border effect */
 .numbers-section .border-item {
   position: relative;
 }
 
-/* Different gradient for the first grid item */
 .numbers-section .border-item:nth-child(1)::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 2px; /* Height of the top border */
+  height: 2px; 
   background: linear-gradient(to right, rgba(225, 225, 225, 1), rgba(225, 225, 225, 0)); 
 }
 
-/* Different gradient for the second grid item */
 .numbers-section .border-item:nth-child(2)::before {
   content: '';
   position: absolute;
@@ -174,7 +103,6 @@ html, body {
   background: linear-gradient(to right, rgba(225, 225, 225, 1), rgba(225, 225, 225, 1));
 }
 
-/* Different gradient for the third grid item */
 .numbers-section  .border-item:nth-child(3)::before {
   content: '';
   position: absolute;
@@ -185,14 +113,13 @@ html, body {
   background: linear-gradient(to left, rgba(225, 225, 225, 1), rgba(225, 225, 225, 0));
 }
 
-/* Vertical gradient borders between items */
 .numbers-section  .border-item:not(:last-child)::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 2px; /* Width of the vertical border */
+  width: 2px;
   background: linear-gradient(to bottom, rgba(225, 225, 225, 1), rgba(225, 225, 225, 0));
 }
 
@@ -203,7 +130,6 @@ html, body {
 
 
 
-/* Custom CSS for the gradient border effect */
 .numbers-section .border-item-1 {
   position: relative;
 }
@@ -212,13 +138,12 @@ html, body {
 
 
 
-/* Vertical gradient borders between items */
 .numbers-section  .border-item-1:not(:last-child)::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 2px; /* Width of the vertical border */
+  width: 2px;
   background: linear-gradient(to top, rgba(225, 225, 225, 1), rgba(225, 225, 225, 0));
 }

@@ -3,8 +3,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 
 interface MouseBlurEffectProps {
   containerRef: React.RefObject<HTMLDivElement | null>;
-  centerColor: string; // Color at the center of the gradient
-  edgeColor: string; // Color at the edge of the gradient
+  centerColor: string; //  center
+  edgeColor: string; 
 }
 
 const MouseBlurEffect: React.FC<MouseBlurEffectProps> = ({
@@ -13,40 +13,40 @@ const MouseBlurEffect: React.FC<MouseBlurEffectProps> = ({
   edgeColor,
 }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const ballRef = useRef<HTMLDivElement | null>(null); // To control the ball
+  const ballRef = useRef<HTMLDivElement | null>(null); // ball
 
-  const size = 700; // Size of the blur circle
+  const size = 700; // Size 
 
-  // Function to smoothly update the position of the blur ball
+  // update bal position
   const moveBall = useCallback(() => {
     if (ballRef.current) {
-      const targetX = position.x - size / 20; // Center the ball at the cursor
+      const targetX = position.x - size / 20; 
       const targetY = position.y - size / 20;
 
-      // Smooth movement using requestAnimationFrame
+      // Smooth movement
       const smoothMove = () => {
-        if (!ballRef.current) return; // Add a check here to ensure ballRef is still valid
+        if (!ballRef.current) return; 
 
         const currentX = parseFloat(ballRef.current!.style.left || "0");
         const currentY = parseFloat(ballRef.current!.style.top || "0");
 
-        // Ease in and out the movement
+        
         const newX = currentX + (targetX - currentX) * 0.5;
         const newY = currentY + (targetY - currentY) * 0.5;
 
-        // Update position
+       
         ballRef.current!.style.left = `${newX}px`;
         ballRef.current!.style.top = `${newY}px`;
 
-        // Continue animation
+        
         requestAnimationFrame(smoothMove);
       };
 
       requestAnimationFrame(smoothMove);
     }
-  }, [position, size]); // Memoize moveBall with position and size as dependencies
+  }, [position, size]); 
 
-  // Track mouse position within the container
+  //mouse position 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (containerRef.current) {
@@ -64,22 +64,22 @@ const MouseBlurEffect: React.FC<MouseBlurEffectProps> = ({
     };
   }, [containerRef]);
 
-  // Smoothly update the ball's position when position changes
+  // update ball's position
   useEffect(() => {
-    moveBall(); // Call moveBall when position changes
-  }, [moveBall]); // Add moveBall as a dependency
+    moveBall(); 
+  }, [moveBall]); 
 
   return (
     <div
       ref={ballRef}
-      className="absolute pointer-events-none rounded-full backdrop-blur-[100px]" // Apply the blur effect
+      className="absolute pointer-events-none rounded-full backdrop-blur-[100px]" 
       style={{
-        top: "0px", // initial top position (we'll adjust it dynamically)
-        left: "0px", // initial left position (we'll adjust it dynamically)
-        width: `${size}px`, // Fixed size of the blur circle
-        height: `${size}px`, // Fixed size of the blur circle
-        transform: "translate(-50%, -50%)", // Center the blur effect
-        background: `radial-gradient(circle, ${centerColor} 0%, ${edgeColor} 70%)`, // Two-color gradient
+        top: "0px", 
+        left: "0px", 
+        width: `${size}px`, 
+        height: `${size}px`,
+        transform: "translate(-50%, -50%)",
+        background: `radial-gradient(circle, ${centerColor} 0%, ${edgeColor} 70%)`, 
       }}
     />
   );

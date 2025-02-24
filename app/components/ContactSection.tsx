@@ -5,12 +5,12 @@ import MouseBlurEffect from "./MouseBlurEffect";
 
 const ContactSection = () => {
 
-  const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
-      const centerColor = "#192429"; // Color at the center
+  const sectionRef = useRef<HTMLDivElement | null>(null); // section
+      const centerColor = "#192429"; // center color
       const edgeColor = "#070A0B";
 
 
-  // Manage the state for each form field
+  //state field
   const [formData, setFormData] = useState({
     name: '',
     fullName: '',
@@ -19,7 +19,7 @@ const ContactSection = () => {
     message: '',
   });
 
-  // Handle changes in each form input
+  // Handle changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
@@ -28,14 +28,12 @@ const ContactSection = () => {
     }));
   };
 
-  // Handle form submission
+  //submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Normally you would send the form data to a backend here
-    console.log('Form submitted with the following data:', formData);
 
-    // You can reset the form after submission if needed
+    //reset the form after submission
     setFormData({
       name: '',
       fullName: '',
@@ -62,7 +60,7 @@ const ContactSection = () => {
     </div>
        <div className='flex items-center justify-center'>
       <form onSubmit={handleSubmit} className=" space-y-4 w-[95%] md:w-[50%] justify-center text-left ">
-        {/* Name */}
+
         <div>
           <input 
             type="text" 
@@ -76,7 +74,6 @@ const ContactSection = () => {
           />
         </div>
 
-        {/* Email */}
         <div>
           <input 
             type="email" 
@@ -90,8 +87,6 @@ const ContactSection = () => {
           />
         </div>
 
-
-        {/* Phone */}
         <div>
           <input 
             type="tel" 
@@ -105,7 +100,6 @@ const ContactSection = () => {
           />
         </div>
 
-        {/* Message */}
         <div>
           <textarea 
             id="message" 
@@ -119,7 +113,6 @@ const ContactSection = () => {
           ></textarea>
         </div>
 
-        {/* Submit Button */}
         <div>
           <button className="bottom-to-top-text1 bg-white px-6 py-2 text-black hover:bg-gray-400 " >
           اضغط وابدأ الرحلة   
