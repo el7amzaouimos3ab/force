@@ -46,13 +46,18 @@ const ImageSwiper: React.FC = () => {
       slidesPerView={1}
       breakpoints={{
 
+        320: {
+          slidesPerView: 1.3,  
+          spaceBetween: 10,  
+        },
+
         640: {
-          slidesPerView: 1.4,  
+          slidesPerView: 2.3,  
           spaceBetween: 20,  // Add space between slides
 
         },
         768: {
-          slidesPerView: 3, 
+          slidesPerView: 3.3, 
           spaceBetween: 20,  // Add space between slides
 
         },

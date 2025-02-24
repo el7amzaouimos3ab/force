@@ -9,31 +9,21 @@ import MouseBlurEffect from "./MouseBlurEffect";
 
 const PartnersSection: React.FC = () => {
 
-    const sectionRef = useRef<HTMLDivElement | null>(null); 
-      const centerColor = "#d6e3ea"; 
-      const edgeColor = "#f7fafc";
 
 
   const images = Array.from({ length: 18 }, (_, i) => `/images/${i + 1}.png`);
  
   return (
-    <section id='partners' className="relative bg-[#f7fafc] pb-10  px-4 lg:px-8 overflow-hidden" ref={sectionRef}>
-     
-
-      <MouseBlurEffect 
-        containerRef={sectionRef} 
-        centerColor={centerColor} 
-        edgeColor={edgeColor} 
-      />
+    <section id='partners' className="relative bg-[#f7fafc] pb-10  px-4 lg:px-8 overflow-hidden" >
 
       <div>
         <h1 className='bottom-to-top-text1 text-black text-4xl md:text-5xl font-medium py-10'>شركاؤنا</h1>
       </div>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2 md:gap-4 rtl">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-1 md:gap-2 rtl">
 
         {images.map((image, index) => (
-          <div key={index} className="bottom-to-top-text1 relative overflow-hidden border border-black">
+          <div key={index} className="bottom-to-top-text1 relative overflow-hidden">
             <Image 
               src={image} 
               alt={`Image ${index + 1}`}
