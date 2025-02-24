@@ -117,7 +117,6 @@ export const animateLogoOnScroll = () => {
         start: "top top", 
         end: "50% 50%", 
         scrub: true, 
-        markers:true,
       },
       opacity: 1,
       filter: "blur(0px)", 
