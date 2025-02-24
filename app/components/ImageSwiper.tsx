@@ -70,7 +70,6 @@ const ImageSwiper: React.FC = () => {
       loop={true}
       navigation
       pagination={{ clickable: true }}
-      className='w-full h-screen'
       
     >
       <SwiperSlide>

@@ -8,9 +8,9 @@ export const Footer = () => {
   return (
     <footer className='bg-[#070A0B] px-4 lg:px-8'>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 py-14">
+      <div className="flex flex-col-reverse md:grid grid-cols-1 md:grid-cols-2 py-14 ">
 
-        <div className="flex flex-wrap items-right justify-start text-right border-item ">
+        <div className="flex flex-wrap items-right justify-center md:justify-start text-right border-item ">
           <FontAwesomeIcon icon={ faSquareFacebook }  className='w-8 mx-2' color="white" />
           <FontAwesomeIcon icon={ faSquareInstagram }  className='w-8 mx-2' color="white" />
           <FontAwesomeIcon icon={ faSquareXTwitter }  className='w-8 mx-2' color="white" />
