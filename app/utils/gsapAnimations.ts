@@ -113,13 +113,17 @@ export const animateLogoOnScroll = () => {
   export const animateTextZoomOnScroll = () => {
     gsap.to(".text-zoom", {
       scrollTrigger: {
-        trigger: ".text-zoom",
-        start: "top 70%", 
-        end: "50% 60%", 
+        trigger: "#logo",
+        start: "top top", 
+        end: "50% 50%", 
         scrub: true, 
+        markers:true,
       },
       opacity: 1,
       filter: "blur(0px)", 
       duration: 0.1, 
     });
   };
+
+
+  

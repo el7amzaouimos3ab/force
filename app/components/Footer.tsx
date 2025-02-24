@@ -22,12 +22,12 @@ export const Footer = () => {
 
       <div className="flex flex-col-reverse md:grid grid-cols-1 md:grid-cols-2 py-14 ">
 
-        <div className="bottom-to-top-text flex flex-wrap items-right justify-center md:justify-start text-right border-item ">
-          <FontAwesomeIcon icon={ faSquareFacebook }  className='text-3xl mx-2' color="white" />
-          <FontAwesomeIcon icon={ faSquareInstagram }  className='text-3xl mx-2' color="white" />
-          <FontAwesomeIcon icon={ faSquareXTwitter }  className='text-3xl mx-2' color="white" />
-          <FontAwesomeIcon icon={ faLinkedin }  className='text-3xl mx-2' color="white" />
-          <FontAwesomeIcon icon={ faSquareYoutube }  className='text-3xl mx-2' color="white" />
+        <div className=" flex flex-wrap items-right justify-center md:justify-start text-right border-item ">
+          <FontAwesomeIcon icon={ faSquareFacebook }  className='bottom-to-top-text text-3xl mx-2' color="white" />
+          <FontAwesomeIcon icon={ faSquareInstagram }  className='bottom-to-top-text text-3xl mx-2' color="white" />
+          <FontAwesomeIcon icon={ faSquareXTwitter }  className='bottom-to-top-text text-3xl mx-2' color="white" />
+          <FontAwesomeIcon icon={ faLinkedin }  className='bottom-to-top-text text-3xl mx-2' color="white" />
+          <FontAwesomeIcon icon={ faSquareYoutube }  className='bottom-to-top-text text-3xl mx-2' color="white" />
         </div>
 
         <div className="bottom-to-top-text flex items-left justify-end border-item">
@@ -35,7 +35,7 @@ export const Footer = () => {
             src="/logos/footer.webp" 
             alt="Image 1" 
             width={400} 
-            height={400} 
+            height={200} 
             className="object-cover mb-4"
           />
         </div>

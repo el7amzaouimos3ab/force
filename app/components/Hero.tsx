@@ -25,9 +25,9 @@ const Hero: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-20">
           <Image 
             src="/logos/01.gif" 
-            alt="work 1" 
+            alt="Hero" 
             width={1596} 
-            height={358}
+            height={900}
             unoptimized 
  
           />

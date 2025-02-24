@@ -20,14 +20,17 @@ export default function ZoomingLogo() {
         <section className="main relative flex items-center justify-center w-full h-[100vh] overflow-hidden">
 
         <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        autoPlay
-        muted
-        loop
-      >
-        <source src="/videos/ZOOM.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
+          autoPlay
+          muted
+          loop
+          playsInline // Ensures it plays inline on mobile devices
+          preload="auto" // Preloads the video for faster loading
+          controls={false}
+        >
+          <source src="/videos/ZOOM.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
           
           <Image
             id="logo"
