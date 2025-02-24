@@ -69,7 +69,7 @@ const SecondSection: React.FC = () => {
   }, []);
  
   return (
-    <section id='about' className="bg-[#070A0B] lg:w-full lg:h-full relative md:flex md:items-center md:justify-between py-4 lg:py-8 px-4 lg:px-8 overflow-hidden" ref={sectionRef}>
+    <section id='about' className="bg-[#070A0B] lg:w-full lg:h-full relative md:flex md:items-center md:justify-between py-4 lg:py-8 px-4 lg:px-8 overflow-hidden " ref={sectionRef}>
 
 <MouseBlurEffect 
         containerRef={sectionRef} 

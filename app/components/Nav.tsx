@@ -49,7 +49,7 @@ const Nav: React.FC = () => {
               <div/>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center gap-4 justify-center">
 
           <button className="relative  bg-white px-6 py-2 md:mt-1 text-black hover:bg-gray-400 text-center align-middle " >
             
@@ -65,7 +65,7 @@ const Nav: React.FC = () => {
               onClick={toggleMobileMenu}
               type="button"
             >
-              <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+              <span className="sm:ml-4 absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-8 h-8"
@@ -90,7 +90,7 @@ const Nav: React.FC = () => {
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } lg:hidden z-50`}
           >
-            <div className="flex flex-row items-center  pb-4">
+            <div className="flex flex-row items-center">
               <button
                 onClick={toggleMobileMenu}
                 className="absolute top-4 right-4 text-white hover:text-gray-400"
