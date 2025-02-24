@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
 
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-90 z-10"></div>
 
-      <div className="absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 text-center mt-28 md:mt-0 text-white z-20">
+      <div className="absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 text-center mt-40 md:mt-0 text-white z-20">
           <Image 
             src="/logos/01.gif" 
             alt="Hero" 
