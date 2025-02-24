@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import  Three from './Three';
 import AbouteModale from "./AbouteModale";
 import MouseBlurEffect from "./MouseBlurEffect";
+import Image from 'next/image';
 
 
 
@@ -14,6 +15,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SecondSection: React.FC = () => {
 
+
+  
   const sectionRef = useRef<HTMLDivElement | null>(null); // Reference to the section
   const centerColor = "#192429"; // Color at the center
   const edgeColor = "#070A0B";
@@ -49,6 +52,21 @@ const SecondSection: React.FC = () => {
         }
       );
     });
+
+
+    gsap.to('.imagesecond', {
+      filter: 'brightness(100%)', // Full brightness on scroll
+      scrollTrigger: {
+        trigger:'.imagesecond', // Trigger based on the wrapper div
+        start: 'top bottom', // Start when the top of the image enters the bottom of the viewport
+        end: 'bottom top', // End when the bottom of the image enters the top of the viewport
+        scrub: true, // Smooth transition as you scroll
+        toggleActions: 'play reverse play reverse',
+        markers: false, // Remove for production
+      },
+    });
+
+
   }, []);
  
   return (
@@ -81,8 +99,17 @@ const SecondSection: React.FC = () => {
         <AbouteModale isOpen={isModalOpen} onClose={closeModal} triggerButtonRef={triggerButtonRef} />
       </div>
 
-      <div className="bottom-to-top-text1 md:w-[50%] flex justify-center overflow-hidden">
-        <Three />
+      <div className=" bottom-to-top-text1 md:w-[50%] flex justify-center w-full h-full">
+        <Image 
+        
+          src="/logos/logoo.svg" 
+          alt="work 1" 
+          width={400} 
+          height={400}
+          className=" imagesecond transition-all ease-out duration-300 "
+          style={{ filter: 'brightness(10%)' }} // Initially darkened image
+
+        />
       </div>
     </section>
   );
