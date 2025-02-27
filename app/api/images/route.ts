@@ -16,7 +16,7 @@ export async function GET() {
 
     // Return the list of image file names
     return NextResponse.json(imageFiles);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Unable to read images' }, { status: 500 });
   }
 }
