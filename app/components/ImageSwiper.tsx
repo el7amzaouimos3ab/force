@@ -1,25 +1,24 @@
-// app/components/ImageSwiper.tsx
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import Image from "next/image";
-import { useRef } from "react";
-import MouseBlurEffect from "./MouseBlurEffect";
-import { animateTextScroll } from '../utils/gsapAnimations';
+import Image from 'next/image';
+import { gsap } from 'gsap';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { ScrollTrigger } from 'gsap/all'; // Import ScrollTrigger
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+gsap.registerPlugin(ScrollTrigger); // Register the GSAP ScrollTrigger plugin
+
 const ImageSwiper: React.FC = () => {
   const [images, setImages] = useState<string[]>([]);
+  const [isImagesLoaded, setIsImagesLoaded] = useState(false); // Track image loading state
+  const sectionRef = useRef<HTMLDivElement | null>(null); // Ref for the section
 
   useEffect(() => {
-    animateTextScroll();
-
-    // Fetch the images from the API route
     const fetchImages = async () => {
       const response = await fetch('/api/images');
       const data = await response.json();
@@ -29,16 +28,39 @@ const ImageSwiper: React.FC = () => {
     fetchImages();
   }, []);
 
-  const sectionRef = useRef<HTMLDivElement | null>(null); // section
-  const centerColor = "#192429"; // center
-  const edgeColor = "#070A0B";
+  // Function to handle image load completion
+  const handleImageLoad = () => {
+    setIsImagesLoaded(true); // Set the flag to true once images are loaded
+  };
+
+  // Trigger GSAP animation for image content after loading
+  useEffect(() => {
+    if (isImagesLoaded && sectionRef.current) {
+      // If images are loaded, refresh the ScrollTrigger to re-evaluate positions
+      ScrollTrigger.refresh();
+
+      // Example: Animate the section's opacity and position after images load
+      gsap.from(sectionRef.current, {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%", // Animation starts when 80% of the section is visible
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
+  }, [isImagesLoaded]);
 
   return (
     <section className='relative bg-[#070A0B] pb-10 overflow-hidden' ref={sectionRef}>
-      <MouseBlurEffect containerRef={sectionRef} centerColor={centerColor} edgeColor={edgeColor} />
-      
       <div>
-        <h1 id='works' className='bottom-to-top-text text-white text-4xl md:text-5xl font-medium py-14 px-4 lg:px-8'>أعمالنا</h1>
+        <h1 id='works' className='bottom-to-top-text text-white text-4xl md:text-5xl font-medium py-14 px-4 lg:px-8'>
+          أعمالنا
+        </h1>
       </div>
 
       <Swiper
@@ -55,17 +77,17 @@ const ImageSwiper: React.FC = () => {
         navigation
         pagination={{ clickable: true }}
       >
-        {/* Render SwiperSlides for each image */}
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
               <Image
                 src={`/works/${image}`}
                 alt={`work ${index + 1}`}
-                width="1080"
-                height="1920"
+                width={1080}
+                height={1920}
                 style={{ objectFit: 'cover' }}
                 className="w-full h-auto"
+                onLoadingComplete={handleImageLoad} // Trigger the loading complete callback
               />
             </div>
           </SwiperSlide>
