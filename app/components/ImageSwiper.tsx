@@ -52,6 +52,7 @@ const ImageSwiper: React.FC = () => {
           scrub: true,
         },
       });
+      window.dispatchEvent(new Event('resize')); 
     }
   }, [isImagesLoaded]);
 
