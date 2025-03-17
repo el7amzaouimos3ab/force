@@ -1,7 +1,6 @@
 // components/Hero.tsx
 'use client';
 
-import Image from "next/image";
 import React, {  useRef } from 'react';
 
 
