@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
             alt="Hero" 
             width={550} 
             height={280}
-            unoptimized 
+            priority
             className="max-w-full h-auto"
  
           />
